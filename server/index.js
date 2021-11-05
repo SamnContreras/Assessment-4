@@ -12,9 +12,6 @@ app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
 					 "Cool shirt!",
 					 "Your Javascript skills are stellar.",
-           "People find it difficult to resist your persuasive manner.",
-           "Rest has a peaceful effect on your physical and emotional health.",
-           "Savor your freedom – it is precious.",
   ];
 
   
@@ -25,6 +22,22 @@ app.get("/api/compliment", (req, res) => {
   
   
   res.status(200).send(randomCompliment);
+  
+});
+
+app.get("/api/fortune", (req, res) => {
+  const fortunes = ["People find it difficult to resist your persuasive manner.",
+  "Rest has a peaceful effect on your physical and emotional health.",
+  "Savor your freedom – it is precious.",
+  "A faithful friend is a strong defense.",
+  "Be careful or you could fall for some tricks today.",
+];
+
+let randomIndex = Math.floor(Math.random() * fortunes.length);
+  let randomFortune = fortunes[randomIndex];
+  
+  
+  res.status(200).send(randomFortune);
   
 });
 

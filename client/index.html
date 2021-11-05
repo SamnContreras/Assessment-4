@@ -6,6 +6,8 @@
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
 
+    <button id="fortuneBtn">Get your fortune!</button>
+
     <button id="motivationBtn">Get a color</button>
 
     <input type="text" id="sub" placeholder="Input Email Here"/>
@@ -32,6 +34,16 @@
         });
     };
     document.getElementById("complimentButton").addEventListener("click", complimentButton);
+
+    //fortune button
+    let fortuneBtn = document.getElementById("fortuneBtn").onclick = function () {
+    axios.get("http://localhost:4000/api/fortune/")
+        .then(function (response) {
+          const data = response.data;
+          alert(data);
+        });
+    };
+    document.getElementById("fortuneBtn").addEventListener("click", fortuneBtn);
 
     //colors button, sorry for the motivation titles, last second change
     let motivationBtn = document.getElementById("motivationBtn").onclick = function (){
